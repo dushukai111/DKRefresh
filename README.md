@@ -22,5 +22,5 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         headerView.lastTimeTextColor=[UIColor grayColor];
         self.tableView.refreshHeaderView=headerView;
 
-效果图
-![image]()
+效果图<br>
+![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_arrow.gif)
