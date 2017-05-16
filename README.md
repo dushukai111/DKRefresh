@@ -2,7 +2,7 @@
 DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含三种动画展示方式，分别为箭头动画、gif动画、圆圈旋转动画，上拉加载有两种形式，一种是上拉加载，一种是自动加载。
 ## 下拉刷新
 下拉刷新包含三种方式，第一种是普通的箭头动画，第二种是gif动画，第三种是圆圈旋转动画，下面分别介绍。
-### 普通刷新
+#### 普通刷新
         DKRefreshNormalHeaderView *headerView=[DKRefreshNormalHeaderView refreshHeaderWithBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
@@ -24,7 +24,7 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
 
 效果图<br>
 ![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_arrow.gif)<br>
-### gif刷新
+#### gif刷新
         DKRefreshGifHeaderView *headerView=[DKRefreshGifHeaderView refreshHeaderWithBlock:^{
             NSLog(@"========");
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -36,7 +36,7 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         self.tableView.refreshHeaderView=headerView;
 <br>效果图<br>
 ![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_gif.gif)<br>
-### 小圆圈刷新
+#### 小圆圈刷新
         DKRefreshCircleHeaderView *headerView=[DKRefreshCircleHeaderView refreshHeaderWithBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
@@ -46,10 +46,10 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         self.tableView.refreshHeaderView=headerView;
 <br>效果图<br>
 ![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_circle.gif)<br>
-### 结束刷新
+#### 结束刷新
 [self.tableView endHeaderRefreshing];
 ## 上拉加载
-### 普通加载
+#### 普通加载
     DKRefreshFooterView *footerView=[DKRefreshFooterView footerViewWithBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
@@ -60,7 +60,7 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
 <br>效果图<br>
 ![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/load_normal.gif)<br>
 
-### 自动加载
+#### 自动加载
     DKRefreshFooterView *footerView=[DKRefreshFooterView footerViewWithBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
@@ -71,11 +71,11 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
 <br>效果图<br>
 ![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/load_auto.gif)<br>
 
-### 无更多数据
+#### 无更多数据
     footerView.status=DKRefreshFooterStatusNoMoreData;
     或者
     self.tableView.refreshFooterView.status=DKRefreshFooterStatusNoMoreData;
-### 结束加载
+#### 结束加载
     [self.tableView endFooterRefreshing];
-### 无更多数据状态转换为准备加载状态
+#### 无更多数据状态转换为准备加载状态
     self.tableView.refreshFooterView.status=DKRefreshFooterStatusNormal;
