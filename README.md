@@ -34,3 +34,13 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         headerView.lastRefreshTimeHidden=NO;
         headerView.images=array; //UIImage数组
         self.tableView.refreshHeaderView=headerView;
+<br>效果图<br>
+![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_gif.gif)<br>
+### 小圆圈刷新
+        DKRefreshCircleHeaderView *headerView=[DKRefreshCircleHeaderView refreshHeaderWithBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+            });
+        }];
+        headerView.lastRefreshTimeHidden=NO;
+        self.tableView.refreshHeaderView=headerView;
