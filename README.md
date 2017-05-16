@@ -21,3 +21,6 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         //最后刷新时间label文字颜色，默认为黑色
         headerView.lastTimeTextColor=[UIColor grayColor];
         self.tableView.refreshHeaderView=headerView;
+
+效果图
+![image]()
