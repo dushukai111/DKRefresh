@@ -77,3 +77,5 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
     self.tableView.refreshFooterView.status=DKRefreshFooterStatusNoMoreData;
 ### 结束加载
     [self.tableView endFooterRefreshing];
+### 无更多数据状态转换为准备加载状态
+    self.tableView.refreshFooterView.status=DKRefreshFooterStatusNormal;
