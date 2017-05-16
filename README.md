@@ -44,3 +44,16 @@ DKRefresh中支持下拉刷新和上拉加载两种功能，下拉刷新包含�
         }];
         headerView.lastRefreshTimeHidden=NO;
         self.tableView.refreshHeaderView=headerView;
+<br>效果图<br>
+![image](https://github.com/dushukai111/publicResources/blob/master/DKRefresh_images/refresh_circle.gif)<br>
+
+## 上拉加载
+### 普通加载
+    DKRefreshFooterView *footerView=[DKRefreshFooterView footerViewWithBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            
+        });
+    }];
+    footerView.autoLoading=YES;
+    self.tableView.refreshFooterView=footerView;
